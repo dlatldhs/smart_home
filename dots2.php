@@ -13,7 +13,7 @@
     $(document).ready(function() { // 
             setInterval(function() {
                 $.ajax({
-                    url: "./download.php?room_num="+room_num,
+                    url: "./download2.php?room_num="+room_num,
                     method: "GET",
                     dataType: "text",
                     success: function(data) {
@@ -22,7 +22,7 @@
                         // console.log(mydata);
                         console.log(mydata);
                         chart.data.labels = mydata.label;
-                        chart.data.datasets[0].data = mydata.humi;
+                        chart.data.datasets[0].data = mydata.air_status;
                         chart.update();
                     }
                 })
@@ -51,9 +51,9 @@ var chart = new Chart(ctx, {
 		datasets: [
                 {
                     // label: mydata['label'],
-					label: 'Humidity',
+					label: 'air',
 					backgroundColor: 'transparent',
-					borderColor: "#FF96FF",
+					borderColor: "#36E0C6",
 					data: [0, 0, 0, 0, 0, 0, 0]
                     // data: mydata['humi']
 				}
