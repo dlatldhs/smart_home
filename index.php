@@ -22,13 +22,17 @@
 
 <!-- 
 	create table humidity(
-    -> humidity_id INT PRIMARY KEY AUTO_INCREMENT,
-    -> humidity_val FLOAT NOT NULL,
-    -> room_id INT NOT NULL);
+		humidity_id INT PRIMARY KEY AUTO_INCREMENT,
+		humidity_val FLOAT NOT NULL,
+		room_id INT NOT NULL
+	);
 
 	create table air_status(
-    -> air_id INT PRIMARY KEY AUTO_INCREMENT,
-    -> air_status FLOAT NOT NULL,
-    -> room_id INT NOT NULL);
+    air_id INT PRIMARY KEY AUTO_INCREMENT,
+    air_status FLOAT NOT NULL,
+    room_id INT NOT NULL
+	rt timestamp current_timestamp
+	);
 
+	
  -->
