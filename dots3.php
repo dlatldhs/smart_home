@@ -1,4 +1,4 @@
-﻿<?php
+<?php
     include "db.php";
     ?>
 <!DOCTYPE html>
@@ -13,7 +13,7 @@
     $(document).ready(function() { // 
             setInterval(function() {
                 $.ajax({
-                    url: "./download.php?room_num="+room_num,
+                    url: "./download3.php?room_num="+room_num,
                     method: "GET",
                     dataType: "text",
                     success: function(data) {
@@ -22,7 +22,8 @@
                         // console.log(mydata);
                         console.log(mydata);
                         chart.data.labels = mydata.label;
-                        chart.data.datasets[0].data = mydata.humi;
+                        chart.data.datasets[0].data = mydata.air_status;
+                        chart.data.datasets[1].data = mydata.humi;
                         chart.update();
                     }
                 })
@@ -48,12 +49,20 @@ var chart = new Chart(ctx, {
 	data: {
 		labels: ['N-6', 'N-5', 'N-4', 'N-3', 'N-2', 'N-1', 'N'],
         // labels: label: mydata['label'],
-		datasets: [
+		datasets: [ 
                 {
                     // label: mydata['label'],
 					label: 'Humidity',
 					backgroundColor: 'transparent',
 					borderColor: "#FF96FF",
+					data: [0, 0, 0, 0, 0, 0, 0]
+                    // data: mydata['humi']
+				},
+                {
+                    // label: mydata['label'],
+					label: 'air',
+					backgroundColor: 'transparent',
+					borderColor: "#36E0C6",
 					data: [0, 0, 0, 0, 0, 0, 0]
                     // data: mydata['humi']
 				}
