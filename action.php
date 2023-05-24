@@ -37,5 +37,7 @@
             echo "bad";
             header("Location: error.php");
         }
+    } else if ($hype == 'using_room') {
+        
     }
 ?>

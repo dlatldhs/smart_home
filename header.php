@@ -19,12 +19,9 @@
 	<a href="v3.php">view 3</a>
 
 	<a href="create.php">create</a>
-<<<<<<< HEAD
 
 	<a href="delete.php">delete</a>
 
 	<a href="update.php">업뎃</a>
-=======
->>>>>>> a9e520a756c62d9c8af604b2d0dd172ee1036928
 </body>
 </html>
