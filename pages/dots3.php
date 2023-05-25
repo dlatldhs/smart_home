@@ -9,11 +9,10 @@
 <script type="text/javascript" charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-    let room_num = "1";
     $(document).ready(function() { // 
             setInterval(function() {
                 $.ajax({
-                    url: "./download3.php?room_num="+room_num,
+                    url: "./download3.php?room_num="+<?php echo $using_room_id; ?>,
                     method: "GET",
                     dataType: "text",
                     success: function(data) {
@@ -36,7 +35,6 @@
 
 </head>
 <body>
-<button onclick=update_did('1')>방1</button> 
 <div style="width:1480px;">
 <canvas id="line1"></canvas>
 </div>

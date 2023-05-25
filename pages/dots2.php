@@ -9,11 +9,10 @@
 <script type="text/javascript" charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-    let room_num = "1";
     $(document).ready(function() { // 
             setInterval(function() {
                 $.ajax({
-                    url: "./download2.php?room_num="+room_num,
+                    url: "./download2.php?room_num="+<?php echo $using_room_id; ?>,
                     method: "GET",
                     dataType: "text",
                     success: function(data) {
@@ -35,7 +34,6 @@
 
 </head>
 <body>
-<button onclick=update_did('1')>방1</button> 
 <div style="width:1480px;">
 <canvas id="line1"></canvas>
 </div>
@@ -47,15 +45,12 @@ var chart = new Chart(ctx, {
 	type: 'line',
 	data: {
 		labels: ['N-6', 'N-5', 'N-4', 'N-3', 'N-2', 'N-1', 'N'],
-        // labels: label: mydata['label'],
-		datasets: [
+        datasets: [
                 {
-                    // label: mydata['label'],
 					label: 'air',
 					backgroundColor: 'transparent',
 					borderColor: "#36E0C6",
 					data: [0, 0, 0, 0, 0, 0, 0]
-                    // data: mydata['humi']
 				}
 		]
 	},
@@ -66,7 +61,6 @@ function nockanda_forever(){
 	var recv  = window.AppInventor.getWebViewString();
 	chart.data.datasets[0].data.shift();
 	chart.data.datasets[0].data.push(recv);
-	//chart.data.labels.shift();
 	chart.update();
 }
 </script>

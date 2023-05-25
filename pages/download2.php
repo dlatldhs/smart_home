@@ -8,7 +8,7 @@
     // $sql = "SELECT * FROM sensor WHERE did='".$_GET['did']."' ORDER BY num desc limit 7;";
     $sql = "
     SELECT *
-    FROM (SELECT * FROM AIR_STATUS WHERE ROOM_ID=1 ORDER BY AIR_ID DESC LIMIT 7) AS subquery
+    FROM (SELECT * FROM AIR_STATUS WHERE ROOM_ID=".$room_num." ORDER BY AIR_ID DESC LIMIT 7) AS subquery
     ORDER BY AIR_ID ASC;
     ";
 

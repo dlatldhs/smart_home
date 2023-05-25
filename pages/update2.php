@@ -33,7 +33,4 @@
             mysqli_close($conn);
             echo "</form>";
             ?>
-<?php
-    include "footer.php";
-?>
 

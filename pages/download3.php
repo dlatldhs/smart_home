@@ -8,7 +8,7 @@
     // $sql = "SELECT * FROM sensor WHERE did='".$_GET['did']."' ORDER BY num desc limit 7;";
     $sql = "
     SELECT *
-    FROM (SELECT * FROM AIR_STATUS WHERE ROOM_ID=1 ORDER BY AIR_ID DESC LIMIT 7) AS subquery
+    FROM (SELECT * FROM AIR_STATUS WHERE ROOM_ID=".$room_num." ORDER BY AIR_ID DESC LIMIT 7) AS subquery
     ORDER BY AIR_ID ASC;
     ";
 
@@ -23,10 +23,10 @@
 
     $sql = "
     SELECT *
-    FROM (SELECT * FROM HUMIDITY WHERE ROOM_ID=1 ORDER BY HUMIDITY_ID DESC LIMIT 7) AS subquery
+    FROM (SELECT * FROM HUMIDITY WHERE ROOM_ID=".$room_num." ORDER BY HUMIDITY_ID DESC LIMIT 7) AS subquery
     ORDER BY HUMIDITY_ID ASC;
     ";
-
+    
     // 쿼리 실행
     $result = mysqli_query($conn, $sql);
     $i = 0;

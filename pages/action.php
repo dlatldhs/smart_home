@@ -18,7 +18,7 @@
         $result = mysqli_query($conn, $sql);
         
         if ( $result ) {
-            echo "good";
+            header("Location: create.php");
         } else {
             echo "bad";
         }
@@ -37,7 +37,5 @@
             echo "bad";
             header("Location: error.php");
         }
-    } else if ($hype == 'using_room') {
-        
     }
 ?>

@@ -9,20 +9,20 @@
 
 
 <div style="position:relative;width:500px; height:300px;">
-	<canvas id="myChart2"></canvas>
+	<canvas id="myChart"></canvas>
 	<div id="cap" style="position:absolute;top:110px;left:0px;text-align:center;width:100%;font-size:70px;font-family:Arial, sans-serif;">
-	<?php echo $air_status; ?>'C
+	<?php echo $humi_val; ?>'C
 	</div>
 </div>
 
 
 <script>
-var input_value = <?php echo $air_status; ?>;
+var input_value = <?php echo $humi_val; ?>;
 var max_value = 100;
 var num = input_value/max_value;
-var color = '#36E0C6';
+var color = '#FF96FF';
 var data = { labels: [input_value ], datasets: [ { data: [num, 1-num], backgroundColor: [color], hoverBackgroundColor: [ color ] }] }; 
-var ctx = document.getElementById('myChart2').getContext('2d');
+var ctx = document.getElementById('myChart').getContext('2d');
 var chart = new Chart(ctx, {
 type: 'doughnut',
 data: data,
@@ -45,6 +45,5 @@ chart.update();
 }
 
 </script>
-<!-- <input type="button" value="테슷흐버튼" onclick="nockanda_forever();"> !-->
 </body>
 </html>
