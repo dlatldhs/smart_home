@@ -15,8 +15,10 @@ if ($conn->connect_error) {
 // GET 방식으로 받은 값 저장
 $humidity = $_GET['humidity'];
 $air_val = $_GET['air'];
+
 $sql = "SELECT * FROM USER_ROOM WHERE IS_USING=1;";
 $result = mysqli_query($conn, $sql);
+
 if ( $result ) {
 
   while ($row = mysqli_fetch_assoc($result)) {

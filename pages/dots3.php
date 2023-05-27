@@ -50,17 +50,17 @@ var chart = new Chart(ctx, {
 		datasets: [ 
                 {
                     // label: mydata['label'],
-					label: 'Humidity',
+					label: 'air',
 					backgroundColor: 'transparent',
-					borderColor: "#FF96FF",
+					borderColor: "#36E0C6",
 					data: [0, 0, 0, 0, 0, 0, 0]
                     // data: mydata['humi']
 				},
                 {
                     // label: mydata['label'],
-					label: 'air',
+					label: 'humidity',
 					backgroundColor: 'transparent',
-					borderColor: "#36E0C6",
+					borderColor: "#FF96FF",
 					data: [0, 0, 0, 0, 0, 0, 0]
                     // data: mydata['humi']
 				}
