@@ -32,7 +32,11 @@
 
 </head>
 <body>
+<<<<<<< HEAD
+<div style="width:800px;">
+=======
 <div style="width:1480px;">
+>>>>>>> fed100a6921ce8e27fe3fdd2dc78336d89badf2d
 <canvas id="line1"></canvas>
 </div>
 
@@ -55,7 +59,25 @@ var chart = new Chart(ctx, {
 				}
 		]
 	},
-	options: {}
+	options: {
+        legend: {
+            labels: {
+                fontColor : 'rgba(255, 255, 255, 1)',
+            }
+        },
+        scales: {
+            xAxes: [{
+                ticks: {
+                    fontColor : 'rgba(255, 255, 255, 1)',
+                }
+            }],
+            yAxes: [{
+                ticks: {
+                    fontColor : 'rgba(255, 255, 255, 1)',
+                }
+            }]
+        }
+    }
 });
 
 function nockanda_forever(){

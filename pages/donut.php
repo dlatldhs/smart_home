@@ -8,9 +8,9 @@
 <body>
 
 
-<div style="position:relative;width:500px; height:300px;">
+<div style="position:relative;width:300px; height:300px; padding-top:55px;">
 	<canvas id="myChart"></canvas>
-	<div id="cap" style="position:absolute;top:110px;left:0px;text-align:center;width:100%;font-size:70px;font-family:Arial, sans-serif;">
+	<div id="cap" style="position:absolute;top:170px;left:0px;text-align:center;width:100%;font-size:55px;font-family:Arial, sans-serif; color:white; ">
 	<?php echo $humi_val; ?>'C
 	</div>
 </div>
