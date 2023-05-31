@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/delete.css">
     <title>Document</title>
 </head>
 <body>
@@ -22,11 +23,11 @@
     
             // 쿼리문 작성
             $sql = "SELECT * FROM USER_ROOM";
-    
+            ?><fieldset class="Fembed"><?php
             // 쿼리 실행
             $result = mysqli_query($conn, $sql);
             if ($result->num_rows > 0 ) {
-                echo "<table border='1' width='500'>";
+                echo "<table border='1' width='1300' height='500' >";
                 echo "<th>room_id</th><th>room_name</th><th>info</th><th>locate</th><th>rt</th><th>업뎃하기</td>";
                 // 콤보 박스 시작 태그 출력
                 while ($row = mysqli_fetch_assoc($result)) {
@@ -42,6 +43,7 @@
             } else {
                 echo "0 results";
             }
+            ?></fieldset><?php
             // DB 연결 종료
             mysqli_close($conn);
         ?>

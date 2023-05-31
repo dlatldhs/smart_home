@@ -8,15 +8,9 @@
 <body>
 
 
-<<<<<<< HEAD
 <div style="position:relative;width:300px; height:300px; padding-top:55px; ">
 	<canvas id="myChart2"></canvas>
 	<div id="cap" style="position:absolute;top:170px;left:0px;text-align:center;width:100%;font-size:55px;font-family:Arial, sans-serif; color:white; ">
-=======
-<div style="position:relative;width:500px; height:300px;">
-	<canvas id="myChart2"></canvas>
-	<div id="cap" style="position:absolute;top:110px;left:0px;text-align:center;width:100%;font-size:70px;font-family:Arial, sans-serif;">
->>>>>>> fed100a6921ce8e27fe3fdd2dc78336d89badf2d
 	<?php echo $air_status; ?>'C
 	</div>
 </div>

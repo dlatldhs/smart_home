@@ -8,10 +8,6 @@
     <link rel="stylesheet" href="../css/graph.css">
 </head>
 <body>
-<<<<<<< HEAD
-=======
-    <div class='graph'>
->>>>>>> fed100a6921ce8e27fe3fdd2dc78336d89badf2d
         <form method='post' action='view.php'>
 
         <?php
@@ -56,7 +52,6 @@
                     
                     // DB 연결 종료
                     mysqli_close($conn);   
-<<<<<<< HEAD
                     ?>
                         <div class="graphcenter2">
                         <div class="graph">
@@ -72,20 +67,9 @@
                         </div>
                         </div>
                         <?php
-=======
-                    
-                    // print
-                    include "donut.php";
-                    include "donut2.php";
-                    include "dots3.php";
->>>>>>> fed100a6921ce8e27fe3fdd2dc78336d89badf2d
                 }
             }    
         ?>
         </form>
-<<<<<<< HEAD
-=======
-    </div>
->>>>>>> fed100a6921ce8e27fe3fdd2dc78336d89badf2d
 </body>
 </html>

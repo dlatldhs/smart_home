@@ -35,11 +35,7 @@
 
 </head>
 <body>
-<<<<<<< HEAD
 <div style="width:800px;">
-=======
-<div style="width:1480px;">
->>>>>>> fed100a6921ce8e27fe3fdd2dc78336d89badf2d
 <canvas id="line1"></canvas>
 </div>
 
@@ -70,7 +66,6 @@ var chart = new Chart(ctx, {
 				}
 		]
 	},
-<<<<<<< HEAD
 	options: {
         legend: {
             labels: {
@@ -90,9 +85,6 @@ var chart = new Chart(ctx, {
             }]
         }
     }
-=======
-	options: {}
->>>>>>> fed100a6921ce8e27fe3fdd2dc78336d89badf2d
 });
 
 function nockanda_forever(){
