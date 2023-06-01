@@ -27,8 +27,8 @@
             // 쿼리 실행
             $result = mysqli_query($conn, $sql);
             if ($result->num_rows > 0 ) {
-                echo "<table border='1' width='1300' height='500' >";
-                echo "<th>room_id</th><th>room_name</th><th>info</th><th>locate</th><th>rt</th><th>업뎃하기</td>";
+                echo "<table border='1' width='1300' height='500' class='po-tb'>";
+                echo "<th>room_id</th><th>room_name</th><th>info</th><th>위치</th><th>rt</th><th>업뎃하기</td>";
                 // 콤보 박스 시작 태그 출력
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<tr>";
@@ -37,7 +37,7 @@
                     echo "<td>" . $row['info'] . "</td>";
                     echo "<td>" . $row['locate'] . "</td>";
                     echo "<td>" . $row['rt'] . "</td>";
-                    echo "<td><a href=./update2.php?id=".$row['room_id'].">업데이트 하기</a></td>";
+                    echo "<td class='po-btn'><a href=./update2.php?id=".$row['room_id'].">업데이트 하기</a></td>";
                 }
                 echo "</table>";
             } else {

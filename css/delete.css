@@ -40,4 +40,24 @@ input[type=text],input[type=password]{
     /* background-color:#C3E7FA; */
     background-color: rgba(0,0,0,.2);
     color:white;
-  }
+}
+
+.po-btn {
+    text-align: center;
+    background-color: lightcoral;
+}
+
+.po-btn:hover {
+    text-align: center;
+    background-color: lightgreen;
+}
+
+.po-btn > a {
+    text-decoration: none;
+    outline: none;
+    color: black;
+}
+
+.po-tb {
+    text-align: center;
+}
