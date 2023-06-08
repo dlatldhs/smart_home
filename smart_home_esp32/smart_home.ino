@@ -26,12 +26,12 @@ MQUnifiedsensor MQ6(placa, Voltage_Resolution, ADC_Bit_Resolution, pin, type);
 WiFiClient client; // 생성자
 
 // led 
-const int RED_PIN = 13; // 빨간색 LED 연결된 핀 번호
-const int GREEN_PIN = 12; // 초록색 LED 연결된 핀 번호
-const int BLUE_PIN = 14; // 파란색 LED 연결된 핀 번호
+const int RED_PIN = 21; // 빨간색 LED 연결된 핀 번호
+const int GREEN_PIN = 22; // 초록색 LED 연결된 핀 번호
+const int BLUE_PIN = 23; // 파란색 LED 연결된 핀 번호
 
 // humidty
-const int humi_threshold = 60.0;
+const int humi_threshold = 90.0;
 
 // RELAY
 const int RELAY_PIN = 5;
@@ -52,6 +52,11 @@ void setup() {
 
   // RELAY SET PIN
   pinMode(RELAY_PIN, OUTPUT);
+
+  // RGB SET PIN
+  pinMode(RED_PIN,OUTPUT);
+  pinMode(GREEN_PIN,OUTPUT);
+  pinMode(BLUE_PIN,OUTPUT);
   
   // 공기질
   MQ6.setRegressionMethod(1); //_PPM =  a*ratio^b
@@ -104,17 +109,23 @@ void loop() {
 
   // 공기 상태에 따른 led 값 변화 구간
   if ( data >= 1 && 10 >= data ) { // 공기 상태 좋음
-    digitalWrite(RED_PIN, LOW);
-    digitalWrite(GREEN_PIN, HIGH);
-    digitalWrite(BLUE_PIN, LOW);
+    Serial.println("공기 상태 매우 좋음!!!");
+    digitalWrite(RED_PIN,LOW);
+    digitalWrite(GREEN_PIN,HIGH);
+    digitalWrite(BLUE_PIN,LOW);
+    delay(500);
   } else if ( data >= 11 && 24 >= data ) { // 공기 상태 보통 ~ 나쁨
-    digitalWrite(RED_PIN, LOW);
-    digitalWrite(GREEN_PIN, LOW);
-    digitalWrite(BLUE_PIN, HIGH);
+    Serial.println("공기 상태 보통 ~ 나쁨");
+    digitalWrite(RED_PIN,LOW);
+    digitalWrite(GREEN_PIN,LOW);
+    digitalWrite(BLUE_PIN,HIGH);
+    delay(500);
   } else { // 공기 상태 매우 나쁨
-    digitalWrite(RED_PIN, HIGH);
-    digitalWrite(GREEN_PIN, LOW);
-    digitalWrite(BLUE_PIN, LOW);
+    Serial.println("공기 상태 매우 나쁨");
+    digitalWrite(RED_PIN,HIGH);
+    digitalWrite(GREEN_PIN,LOW);
+    digitalWrite(BLUE_PIN,LOW);
+    delay(500);
   }
 
   // 습도에 따른 센서 조절 구간
@@ -127,13 +138,13 @@ void loop() {
     digitalWrite(RELAY_PIN, LOW);  // RELAY unactivation
   }
   
-  Serial.println(data);
+//  Serial.println(data);
   delay(5000);
   int room_id = 1;
-  String url = "/3410/upload.php?humidity="+String(humidity)+"&air="+String(data)+"&room_number="+String(room_id);
-  client.print(String("GET ") + url + " HTTP/1.1\r\n" +
-               "Host: " + host + "\r\n" +
-               "Connection: close\r\n\r\n");
+  String url = "/3410/pages/upload.php?humidity="+String(humidity)+"&air="+String(data)+"&room_number="+String(room_id);
+//  client.print(String("GET ") + url + " HTTP/1.1\r\n" +
+//               "Host: " + host + "\r\n" +
+//               "Connection: close\r\n\r\n");
                
   unsigned long ti = millis(); //생존시간
   
