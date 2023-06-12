@@ -53,6 +53,8 @@
                         </div>
                         <?php
 
+                    }else {
+                        echo "<h1 style='color: white; text-align: center;' >room id가 없습니다...지정해주세요.</h1>";
                     }
                 } else {
                     echo "else 문";

@@ -38,7 +38,7 @@
                     echo "<td>" . $row['info'] . "</td>";
                     echo "<td>" . $row['locate'] . "</td>";
                     echo "<td>" . $row['rt'] . "</td>";
-                    echo "<td class='po-btn' ><a href=./delete2.php?id=".$row['room_id'].">제거^^</a></td>";
+                    echo "<td class='po-btn' ><a href=./delete2.php?id=".$row['room_id'].">제거하기</a></td>";
                 }
                 echo "</table>";
             } else {
