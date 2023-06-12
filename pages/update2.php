@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/delete.css">
+    <style>
+		body {
+			margin: 0 0 0 0;
+			/* background-color: rgb(36, 154, 227); */
+			background: url("../images/background8.jpg")center center fixed no-repeat;
+			background-size:cover;
+			background-color: rgba(0,0,0,.1);
+			/* backdrop-filter: blur(5px); */
+			width:  100%;
+			height: 100%;
+		}
+	</style>
 </head>
 <body>
 <?php include "header.php"; ?>
